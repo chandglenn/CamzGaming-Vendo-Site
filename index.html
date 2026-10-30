@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camz Vending Machine | All-in-One Vendo Business</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --accent: #2563eb;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --success: #16a34a;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 4rem 5%;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: white;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .btn {
+      display: inline-block;
+      background-color: #f59e0b;
+      color: #0f172a;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #d97706;
+    }
+    .section {
+      padding: 5rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid var(--accent);
+    }
+    .feature-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    .pricing-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 1rem 0;
+    }
+    .calculator-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .calc-row {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .calc-row input {
+      width: 100px;
+      padding: 0.4rem;
+      font-size: 1rem;
+    }
+    .profit-result {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--success);
+      text-align: center;
+      margin-top: 1rem;
+    }
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Camz Vending Machine</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#calculator">Profit Estimator</a>
+      <a href="#pricing">Package & Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>All-in-One Automated Business Kiosk</h1>
+      <p>Piso Wi-Fi, E-Loading, GCash & Maya Cash-In, and Bills Payment all housed in one rugged, high-profit machine built directly by the manufacturer.</p>
+      <a href="#pricing" class="btn">View Package & Order Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/vendo.jpg" alt="All in One Vendo Machine">
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2 class="section-title">All-in-One Services Included</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>📶 Piso Wi-Fi System</h3>
+        <p>Powered by reliable JuanFi/JuanConnect architecture for fast coin-operated internet vending.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 E-Loading Hub</h3>
+        <p>Instant loading service for all major Philippine telecommunication networks.</p>
+      </div>
+      <div class="feature-card">
+        <h3>💸 GCash & Maya Cash-In</h3>
+        <p>Offer local digital wallet cash-in and cash-out convenience right in your neighborhood.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📄 Bills Payment</h3>
+        <p>Allow customers to pay utilities and monthly bills with ease and earn transaction fees.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calculator">
+    <h2 class="section-title">Live Daily Profit Estimator</h2>
+    <div class="calculator-box">
+      <div class="calc-row">
+        <label for="wifiUsers">Estimated Wi-Fi Users per day:</label>
+        <input type="number" id="wifiUsers" value="30" oninput="calculateProfit()">
+      </div>
+      <div class="calc-row">
+        <label for="eloadTx">E-Load / Cash-In transactions per day:</label>
+        <input type="number" id="eloadTx" value="20" oninput="calculateProfit()">
+      </div>
+      <div class="profit-result" id="dailyProfit">Estimated Daily Profit: ₱450</div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <h2 class="section-title">All-in-One Kiosk Package</h2>
+    <div class="pricing-card">
+      <h3>Complete All-in-One Vendo Unit</h3>
+      <p>Direct Manufacturer Build & Configuration</p>
+      <div class="price">₱28,000</div>
+      <ul style="text-align: left; margin: 1.5rem 0; list-style-position: inside; color: var(--gray);">
+        <li>Heavy-duty steel enclosure</li>
+        <li>Coin acceptor & bill validator ready</li>
+        <li>Pre-configured Piso Wi-Fi & E-Loading software</li>
+        <li>Plug-and-play setup support</li>
+      </ul>
+      <a href="#contact" class="btn">Inquire / Buy Now</a>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="text-align: center;">
+    <h2 class="section-title">Get in Touch</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Ready to launch your vending business? Contact us directly or visit our shop.</p>
+    <p><strong>Location:</strong> Mati City, Davao Oriental</p>
+    <p><strong>Contact Number:</strong> 0975-960-6961</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Camz Vending Machine. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function calculateProfit() {
+      const wifiUsers = document.getElementById('wifiUsers').value || 0;
+      const eloadTx = document.getElementById('eloadTx').value || 0;
+      // Rough estimation: ₱10 per wifi user average + ₱7 per e-load/cash-in transaction
+      const total = (wifiUsers * 10) + (eloadTx * 7);
+      document.getElementById('dailyProfit').innerText = `Estimated Daily Profit: ₱${total.toLocaleString()}`;
+    }
+  </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camz Vending Machine | All-in-One Vendo Business</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --accent: #2563eb;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --success: #16a34a;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #60a5fa;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 4rem 5%;
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: white;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+    .btn {
+      display: inline-block;
+      background-color: #f59e0b;
+      color: #0f172a;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #d97706;
+    }
+    .section {
+      padding: 5rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      color: var(--primary);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid var(--accent);
+    }
+    .feature-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+    .pricing-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2.5rem;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 1rem 0;
+    }
+    .calculator-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .calc-row {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .calc-row input {
+      width: 100px;
+      padding: 0.4rem;
+      font-size: 1rem;
+    }
+    .profit-result {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--success);
+      text-align: center;
+      margin-top: 1rem;
+    }
+    footer {
+      background: var(--dark);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Camz Vending Machine</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#calculator">Profit Estimator</a>
+      <a href="#pricing">Package & Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>All-in-One Automated Business Kiosk</h1>
+      <p>Piso Wi-Fi, E-Loading, GCash & Maya Cash-In, and Bills Payment all housed in one rugged, high-profit machine built directly by the manufacturer.</p>
+      <a href="#pricing" class="btn">View Package & Order Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://unsplash.com" alt="All in One Vendo Machine">
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2 class="section-title">All-in-One Services Included</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>📶 Piso Wi-Fi System</h3>
+        <p>Powered by reliable JuanFi/JuanConnect architecture for fast coin-operated internet vending.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📱 E-Loading Hub</h3>
+        <p>Instant loading service for all major Philippine telecommunication networks.</p>
+      </div>
+      <div class="feature-card">
+        <h3>💸 GCash & Maya Cash-In</h3>
+        <p>Offer local digital wallet cash-in and cash-out convenience right in your neighborhood.</p>
+      </div>
+      <div class="feature-card">
+        <h3>📄 Bills Payment</h3>
+        <p>Allow customers to pay utilities and monthly bills with ease and earn transaction fees.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calculator">
+    <h2 class="section-title">Live Daily Profit Estimator</h2>
+    <div class="calculator-box">
+      <div class="calc-row">
+        <label for="wifiUsers">Estimated Wi-Fi Users per day:</label>
+        <input type="number" id="wifiUsers" value="30" oninput="calculateProfit()">
+      </div>
+      <div class="calc-row">
+        <label for="eloadTx">E-Load / Cash-In transactions per day:</label>
+        <input type="number" id="eloadTx" value="20" oninput="calculateProfit()">
+      </div>
+      <div class="profit-result" id="dailyProfit">Estimated Daily Profit: ₱450</div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <h2 class="section-title">All-in-One Kiosk Package</h2>
+    <div class="pricing-card">
+      <h3>Complete All-in-One Vendo Unit</h3>
+      <p>Direct Manufacturer Build & Configuration</p>
+      <div class="price">₱28,000</div>
+      <ul style="text-align: left; margin: 1.5rem 0; list-style-position: inside; color: var(--gray);">
+        <li>Heavy-duty steel enclosure</li>
+        <li>Coin acceptor & bill validator ready</li>
+        <li>Pre-configured Piso Wi-Fi & E-Loading software</li>
+        <li>Plug-and-play setup support</li>
+      </ul>
+      <a href="#contact" class="btn">Inquire / Buy Now</a>
+    </div>
+  </section>
+
+  <section class="section" id="contact" style="text-align: center;">
+    <h2 class="section-title">Get in Touch</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Ready to launch your vending business? Contact us directly or visit our shop.</p>
+    <p><strong>Location:</strong> Mati City, Davao Oriental</p>
+    <p><strong>Contact Number:</strong> 0975-960-6961</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Camz Vending Machine. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function calculateProfit() {
+      const wifiUsers = document.getElementById('wifiUsers').value || 0;
+      const eloadTx = document.getElementById('eloadTx').value || 0;
+      // Rough estimation: ₱10 per wifi user average + ₱7 per e-load/cash-in transaction
+      const total = (wifiUsers * 10) + (eloadTx * 7);
+      document.getElementById('dailyProfit').innerText = `Estimated Daily Profit: ₱${total.toLocaleString()}`;
+    }
+  </script>
+
+</body>
+</html>
